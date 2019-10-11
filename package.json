@@ -1,0 +1,43 @@
+{
+  "name": "electron-demo4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "build": {
+    "asar": false
+  },
+  "author": {
+    "name": "下一个雨季~",
+    "email": "709886167@qq.com"
+  },
+  "scripts": {
+    "start": "electron-webpack dev",
+    "dev:renderer": "APP_ROOT=src/renderer BROWSER=none ESLINT=none umi dev",
+    "build": "npm run build:renderer && npm run build:main",
+    "build:main": "electron-webpack",
+    "build:renderer": "APP_ROOT=src/renderer ESLINT=none umi build",
+    "pack": "electron-builder",
+    "pack:dir": "npm run build && electron-builder --dir",
+    "pack:dirOnly": "electron-builder --dir"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/runtime": "^7.6.3",
+    "antd": "^3.23.6",
+    "electron": "^6.0.12",
+    "electron-builder": "^21.2.0",
+    "electron-debug": "^3.0.1",
+    "electron-is": "^3.0.0",
+    "electron-log": "^3.0.8",
+    "electron-webpack": "^2.7.4",
+    "umi": "^2.10.1",
+    "umi-plugin-react": "^1.12.2",
+    "webpack": "^4.41.0"
+  },
+  "electronWebpack": {
+    "renderer": null
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.13"
+  }
+}
